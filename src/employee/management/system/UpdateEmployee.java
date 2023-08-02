@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class UpdateEmployee extends JFrame implements ActionListener{
     
-    JTextField tfeducation, tffname, tfaddress, tfphone, tfaadhar, tfemail, tfsalary, tfdesignation;
+    JTextField eeducation, elname, eaddress, ephone, epostalcode, eemail, esalary, edesignation;
     JLabel lblempId;
     JButton add, back;
     String empId;
@@ -36,9 +36,9 @@ public class UpdateEmployee extends JFrame implements ActionListener{
         labelfname.setFont(new Font("serif", Font.PLAIN, 20));
         add(labelfname);
         
-        tffname = new JTextField();
-        tffname.setBounds(600, 150, 150, 30);
-        add(tffname);
+        elname = new JTextField();
+        elname.setBounds(600, 150, 150, 30);
+        add(elname);
         
         JLabel labeldob = new JLabel("Date of Birth");
         labeldob.setBounds(50, 200, 150, 30);
@@ -54,54 +54,54 @@ public class UpdateEmployee extends JFrame implements ActionListener{
         labelsalary.setFont(new Font("serif", Font.PLAIN, 20));
         add(labelsalary);
         
-        tfsalary = new JTextField();
-        tfsalary.setBounds(600, 200, 150, 30);
-        add(tfsalary);
+        esalary = new JTextField();
+        esalary.setBounds(600, 200, 150, 30);
+        add(esalary);
         
         JLabel labeladdress = new JLabel("Address");
         labeladdress.setBounds(50, 250, 150, 30);
         labeladdress.setFont(new Font("serif", Font.PLAIN, 20));
         add(labeladdress);
         
-        tfaddress = new JTextField();
-        tfaddress.setBounds(200, 250, 150, 30);
-        add(tfaddress);
+        eaddress = new JTextField();
+        eaddress.setBounds(200, 250, 150, 30);
+        add(eaddress);
         
         JLabel labelphone = new JLabel("Phone");
         labelphone.setBounds(400, 250, 150, 30);
         labelphone.setFont(new Font("serif", Font.PLAIN, 20));
         add(labelphone);
         
-        tfphone = new JTextField();
-        tfphone.setBounds(600, 250, 150, 30);
-        add(tfphone);
+        ephone = new JTextField();
+        ephone.setBounds(600, 250, 150, 30);
+        add(ephone);
         
         JLabel labelemail = new JLabel("Email");
         labelemail.setBounds(50, 300, 150, 30);
         labelemail.setFont(new Font("serif", Font.PLAIN, 20));
         add(labelemail);
         
-        tfemail = new JTextField();
-        tfemail.setBounds(200, 300, 150, 30);
-        add(tfemail);
+        eemail = new JTextField();
+        eemail.setBounds(200, 300, 150, 30);
+        add(eemail);
         
         JLabel labeleducation = new JLabel("Higest Education");
         labeleducation.setBounds(400, 300, 150, 30);
         labeleducation.setFont(new Font("serif", Font.PLAIN, 20));
         add(labeleducation);
         
-        tfeducation = new JTextField();
-        tfeducation.setBounds(600, 300, 150, 30);
-        add(tfeducation);
+        eeducation = new JTextField();
+        eeducation.setBounds(600, 300, 150, 30);
+        add(eeducation);
         
         JLabel labeldesignation = new JLabel("Designation");
         labeldesignation.setBounds(50, 350, 150, 30);
         labeldesignation.setFont(new Font("serif", Font.PLAIN, 20));
         add(labeldesignation);
         
-        tfdesignation = new JTextField();
-        tfdesignation.setBounds(200, 350, 150, 30);
-        add(tfdesignation);
+        edesignation = new JTextField();
+        edesignation.setBounds(200, 350, 150, 30);
+        add(edesignation);
         
         JLabel labelaadhar = new JLabel("Postal Code");
         labelaadhar.setBounds(400, 350, 150, 30);
@@ -128,16 +128,16 @@ public class UpdateEmployee extends JFrame implements ActionListener{
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()) {
                 lblname.setText(rs.getString("name"));
-                tffname.setText(rs.getString("fname"));
+                elname.setText(rs.getString("fname"));
                 lbldob.setText(rs.getString("dob"));
-                tfaddress.setText(rs.getString("address"));
-                tfsalary.setText(rs.getString("salary"));
-                tfphone.setText(rs.getString("phone"));
-                tfemail.setText(rs.getString("email"));
-                tfeducation.setText(rs.getString("education"));
+                eaddress.setText(rs.getString("address"));
+                esalary.setText(rs.getString("salary"));
+                ephone.setText(rs.getString("phone"));
+                eemail.setText(rs.getString("email"));
+                eeducation.setText(rs.getString("education"));
                 lblaadhar.setText(rs.getString("aadhar"));
                 lblempId.setText(rs.getString("empId"));
-                tfdesignation.setText(rs.getString("designation"));
+                edesignation.setText(rs.getString("designation"));
                 
             }
         } catch (Exception e) {
