@@ -62,7 +62,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
             String query = "select * from employee where empId = '"+cEmpId.getSelectedItem()+"'";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()) {
-                lblname.setText(rs.getString("name"));
+                lblname.setText(rs.getString("fname"));
                 lblphone.setText(rs.getString("phone"));
                 lblemail.setText(rs.getString("email"));
             }
@@ -77,7 +77,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
                     String query = "select * from employee where empId = '"+cEmpId.getSelectedItem()+"'";
                     ResultSet rs = c.s.executeQuery(query);
                     while(rs.next()) {
-                        lblname.setText(rs.getString("name"));
+                        lblname.setText(rs.getString("fname"));
                         lblphone.setText(rs.getString("phone"));
                         lblemail.setText(rs.getString("email"));
                     }
