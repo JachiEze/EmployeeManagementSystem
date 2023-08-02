@@ -127,15 +127,15 @@ public class UpdateEmployee extends JFrame implements ActionListener{
             String query = "select * from employee where empId = '"+empId+"'";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()) {
-                lblname.setText(rs.getString("name"));
-                elname.setText(rs.getString("fname"));
+                lblname.setText(rs.getString("fname"));
+                elname.setText(rs.getString("lname"));
                 lbldob.setText(rs.getString("dob"));
                 eaddress.setText(rs.getString("address"));
                 esalary.setText(rs.getString("salary"));
                 ephone.setText(rs.getString("phone"));
                 eemail.setText(rs.getString("email"));
                 eeducation.setText(rs.getString("education"));
-                lblaadhar.setText(rs.getString("aadhar"));
+                lblaadhar.setText(rs.getString("postalcode"));
                 lblempId.setText(rs.getString("empId"));
                 edesignation.setText(rs.getString("designation"));
                 
@@ -165,13 +165,13 @@ public class UpdateEmployee extends JFrame implements ActionListener{
     
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == add) {
-            String fname = tffname.getText();
-            String salary = tfsalary.getText();
-            String address = tfaddress.getText();
-            String phone = tfphone.getText();
-            String email = tfemail.getText();
-            String education = tfeducation.getText();
-            String designation = tfdesignation.getText();
+            String lname = elname.getText();
+            String salary = esalary.getText();
+            String address = eaddress.getText();
+            String phone = ephone.getText();
+            String email = eemail.getText();
+            String education = eeducation.getText();
+            String designation = edesignation.getText();
             
             try {
                 Conn conn = new Conn();
