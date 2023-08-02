@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class Login extends JFrame implements ActionListener{
     
-    JTextField tfusername, tfpassword;
+    JTextField eusername, epassword;
     
     Login() {
         
@@ -18,17 +18,17 @@ public class Login extends JFrame implements ActionListener{
         lblusername.setBounds(40, 20, 100, 30);
         add(lblusername);
         
-        tfusername = new JTextField();
-        tfusername.setBounds(150, 20, 150, 30);
-        add(tfusername);
+        eusername = new JTextField();
+        eusername.setBounds(150, 20, 150, 30);
+        add(eusername);
         
         JLabel lblpassword = new JLabel("Password");
         lblpassword.setBounds(40, 70, 100, 30);
         add(lblpassword);
         
-        tfpassword = new JTextField();
-        tfpassword.setBounds(150, 70, 150, 30);
-        add(tfpassword);
+        epassword = new JTextField();
+        epassword.setBounds(150, 70, 150, 30);
+        add(epassword);
         
         JButton login = new JButton("LOGIN");
         login.setBounds(150, 140, 150, 30);
@@ -51,8 +51,8 @@ public class Login extends JFrame implements ActionListener{
     
     public void actionPerformed(ActionEvent ae) {
         try {
-            String username = tfusername.getText();
-            String password = tfpassword.getText();
+            String username = eusername.getText();
+            String password = epassword.getText();
             
             Conn c = new Conn();
             String query = "select * from login where username = '"+username+"' and password = '"+password+"'";
